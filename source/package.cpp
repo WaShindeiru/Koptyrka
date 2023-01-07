@@ -5,16 +5,11 @@ public:
     Package();
     Package(ElementID);
     Package(Package&&);
-    Package& operator = (Package&& other){
-        ID = other.ID;
-        return *this;
-
-    }
+    Package& operator=(Package&&);
     ElementID get_id();
     ~Package();
 
 private:
-    ElementID ID;
 
 
 };

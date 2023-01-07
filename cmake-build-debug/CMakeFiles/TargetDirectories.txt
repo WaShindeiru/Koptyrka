@@ -1,0 +1,3 @@
+C:/Users/janch/OneDrive/Desktop/Storage/cmake-build-debug/CMakeFiles/Storage.dir
+C:/Users/janch/OneDrive/Desktop/Storage/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/janch/OneDrive/Desktop/Storage/cmake-build-debug/CMakeFiles/rebuild_cache.dir
