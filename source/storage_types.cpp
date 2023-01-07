@@ -1,5 +1,5 @@
 #include "types.hpp"
-#include "package.hpp"
+#include "storage_types.hpp"
 
 
 #include <stdlib.h>
@@ -7,48 +7,61 @@
 #include <vector>
 #include <stdio.h>
 
-enum PackageQueueType{
-    FIFO,
-    LIFO
-};
+enum PackageQueueType;
 
-class IPackageStockpile{
-public:
-    virtual void push(Package&& package) = 0;
-    virtual bool empty() = 0;
-    using const_iterator = std::list<Package>::const_iterator;
-
-    using size_type = std::list<Package>::size_type;
-    virtual size_type size() = 0;
-    virtual ~IPackageStockpile();
-};
-
-class IPackageQueue : IPackageStockpile{
-public:
-    virtual Package pop() ;
-    virtual PackageQueueType get_queue_type();
-};
-
-class PackageQueue : IPackageQueue{
+class PackageQueue : public IPackageQueue{
 public:
     PackageQueue(PackageQueueType type) : queueType(type){};
     void push(Package&& package) override{
         packageList.emplace_back(std::move(package));
     }
 
+    bool empty() override{
+        return packageList.empty();
+    }
+
+    size_type size() override{
+        return packageList.size();
+    }
+
+    const_iterator begin() override{
+        return packageList.begin();
+    }
+
+    const_iterator end() override{
+        return packageList.end();
+    }
+
+    const_iterator cbegin() const override{
+        return packageList.cbegin();
+    }
+
+    const_iterator cend() const override{
+        return packageList.cend();
+    }
+
+    PackageQueueType get_queue_type() const override{
+        return queueType;
+    }
+
     //jakas lipa
     Package pop() override{
         switch(queueType){
             case FIFO:
-                 auto package = *packageList.cbegin();
+                 auto package = *cbegin();
                  packageList.pop_front();
-                return package;
+                 return package;
+                 break;
 
             case LIFO:
-
+                auto package = *cend();
+                packageList.pop_back();
+                return package;
                 break;
         }
     }
+
+    ~PackageQueue();
 
 private:
     PackageQueueType queueType;
