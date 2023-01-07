@@ -15,12 +15,13 @@ Package::Package(ElementID Id){
     assigned_IDs.insert(ID);
 };
 
-Package::Package(Package&& other){
-    ID = other.ID;
+Package::Package(Package&& other) : ID(other.get_id()){
+
+
 }
 
 Package& Package::operator=(Package&& other){
-    ID = other.ID;
+    ID = other.get_id();
     return *this;
 
 };
@@ -32,7 +33,8 @@ ElementID Package::get_id() const{
 Package::~Package(){
     freed_IDs.insert(ID);
     assigned_IDs.erase(ID);
-};
+}
+
 
 std::set<ElementID> Package::assigned_IDs;
 std::set<ElementID> Package::freed_IDs;

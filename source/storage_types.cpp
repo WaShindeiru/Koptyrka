@@ -42,10 +42,12 @@
 
 
     Package PackageQueue::pop(){
+
+        //TODO make it work
         switch(queueType){
+
             case FIFO:
                 return Package();
-
 
             case LIFO:
                 return Package();
