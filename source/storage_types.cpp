@@ -43,19 +43,21 @@
 
     Package PackageQueue::pop(){
 
-        //TODO make it work
+        Package package(0);
+
         switch(queueType){
 
             case FIFO:
-                return Package();
+                package = Package(std::move(packageList.front()));
+                packageList.pop_front();
+                break;
 
             case LIFO:
-                return Package();
-
-            default:
-                return Package();
-
+                package = Package(std::move(packageList.back()));
+                packageList.pop_back();
+                break;
         }
+        return package;
     }
 
     PackageQueue::~PackageQueue() = default;
