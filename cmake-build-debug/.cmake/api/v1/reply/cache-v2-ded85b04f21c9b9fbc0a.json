@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/janch/OneDrive/Desktop/Storage/cmake-build-debug"
+			"value" : "c:/Users/janch/OneDrive/Desktop/franek/Koptyrka/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/janch/OneDrive/Desktop/Storage/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/janch/OneDrive/Desktop/franek/Koptyrka/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/janch/OneDrive/Desktop/Storage"
+			"value" : "C:/Users/janch/OneDrive/Desktop/franek/Koptyrka"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -659,7 +659,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/NetSim"
+			"value" : "C:/Program Files (x86)/Storage"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -1254,42 +1254,6 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "NetSim_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/janch/OneDrive/Desktop/Storage/cmake-build-debug"
-		},
-		{
-			"name" : "NetSim_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "NetSim_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/janch/OneDrive/Desktop/Storage"
-		},
-		{
 			"name" : "Storage_BINARY_DIR",
 			"properties" : 
 			[
@@ -1299,7 +1263,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/janch/OneDrive/Desktop/Storage/cmake-build-debug"
+			"value" : "C:/Users/janch/OneDrive/Desktop/franek/Koptyrka/cmake-build-debug"
 		},
 		{
 			"name" : "Storage_IS_TOP_LEVEL",
@@ -1323,7 +1287,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/janch/OneDrive/Desktop/Storage"
+			"value" : "C:/Users/janch/OneDrive/Desktop/franek/Koptyrka"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",

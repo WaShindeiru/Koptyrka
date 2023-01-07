@@ -1,73 +1,68 @@
-#include "types.hpp"
 #include "storage_types.hpp"
-
 
 #include <stdlib.h>
 #include <list>
 #include <vector>
 #include <stdio.h>
 
-enum PackageQueueType;
 
-class PackageQueue : public IPackageQueue{
-public:
-    PackageQueue(PackageQueueType type) : queueType(type){};
-    void push(Package&& package) override{
+    PackageQueue::PackageQueue(PackageQueueType type) : queueType(type){};
+
+    void PackageQueue::push(Package&& package) {
         packageList.emplace_back(std::move(package));
     }
 
-    bool empty() override{
+    bool PackageQueue::empty(){
         return packageList.empty();
     }
 
-    size_type size() override{
+    size_type PackageQueue::size(){
         return packageList.size();
     }
 
-    const_iterator begin() override{
+    const_iterator PackageQueue::begin(){
         return packageList.begin();
     }
 
-    const_iterator end() override{
+    const_iterator PackageQueue::end(){
         return packageList.end();
     }
 
-    const_iterator cbegin() const override{
+    const_iterator PackageQueue::cbegin() const{
         return packageList.cbegin();
     }
 
-    const_iterator cend() const override{
+    const_iterator PackageQueue::cend() const{
         return packageList.cend();
     }
 
-    PackageQueueType get_queue_type() const override{
+    PackageQueueType PackageQueue::get_queue_type() const{
         return queueType;
     }
 
-    //jakas lipa
-    Package pop() override{
+
+    Package PackageQueue::pop(){
         switch(queueType){
             case FIFO:
-                 auto package = *cbegin();
-                 packageList.pop_front();
-                 return package;
-                 break;
+                return Package();
+
 
             case LIFO:
-                auto package = *cend();
-                packageList.pop_back();
-                return package;
-                break;
+                return Package();
+
+            default:
+                return Package();
+
         }
     }
 
-    ~PackageQueue();
+    PackageQueue::~PackageQueue() = default;
 
-private:
-    PackageQueueType queueType;
-    std::list<Package> packageList;
 
-};
+
+
+
+
 
 
 
