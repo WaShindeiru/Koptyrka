@@ -1,16 +1,10 @@
-//
-// Created by frane on 07/01/2023.
-//
-#import <stdlib.h>
+#ifndef TYPES_H // include guard
+#define TYPES_H
 
-#ifndef KOT_TYPES_HPP
-#define KOT_TYPES_HPP
+#include <list>
 
-using ElementID = std::size_t;
 
-enum class PackageQueueType {
-    FIFO,
-    LIFO,
-};
+using ElementID = int;
 
-#endif //KOT_TYPES_HPP
+
+#endif
