@@ -1,15 +1,12 @@
-#ifndef TYPES_H // include guard
-#define TYPES_H
+#ifndef NETSIM_TYPES_HPP
+#define NETSIM_TYPES_HPP
 
-#include <list>
+#include <cstdint>
 #include <functional>
 
-
-using ElementID = int;
-using Time = int;
-using TimeOffset = int;
+using ElementID = uint32_t;
+using Time = unsigned long long int;
+using TimeOffset = unsigned long long int;
 using ProbabilityGenerator = std::function<double()>;
-
-
 
 #endif

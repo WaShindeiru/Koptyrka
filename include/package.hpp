@@ -1,23 +1,24 @@
-#ifndef package_hpp
-#define package_hpp
+#ifndef NETSIM_PACKAGE_HPP
+#define NETSIM_PACKAGE_HPP
 
 #include "types.hpp"
-#include <set>
+#include <vector>
 
-class Package {
+class Package{
 public:
     Package();
-    Package(ElementID Id);
-    Package(Package&& other);
-
-    Package& operator=(Package&& other);
-    ElementID get_id() const;
-
+    explicit Package(ElementID);
+    Package(Package&&) noexcept;
+    Package& operator = (Package&&) noexcept;
+    ElementID get_id() const {return ID_;};
     ~Package();
 
 private:
-    static std::set<ElementID> assigned_IDs;
-    static std::set<ElementID> freed_IDs;
-    ElementID ID;
+    static std::vector<ElementID> usedlist;
+    static std::vector<ElementID> freelist;
+    ElementID ID_;
 };
+
+
 #endif
+

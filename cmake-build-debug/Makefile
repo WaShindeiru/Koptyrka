@@ -47,19 +47,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2022.3\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2022.3.1\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2022.3\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2022.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\data\Koptyrka-janu-
+CMAKE_SOURCE_DIR = C:\Users\janch\OneDrive\Desktop\SIECI\Projekt\NetSim
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\data\Koptyrka-janu-\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\janch\OneDrive\Desktop\SIECI\Projekt\NetSim\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = D:\data\Koptyrka-janu-\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2022.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2022.3.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -77,18 +77,63 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2022.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2022.3.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"C:\Program Files\JetBrains\CLion 2022.3.1\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"C:\Program Files\JetBrains\CLion 2022.3.1\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	"C:\Program Files\JetBrains\CLion 2022.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	"C:\Program Files\JetBrains\CLion 2022.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	"C:\Program Files\JetBrains\CLion 2022.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	"C:\Program Files\JetBrains\CLion 2022.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\data\Koptyrka-janu-\cmake-build-debug\CMakeFiles D:\data\Koptyrka-janu-\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\janch\OneDrive\Desktop\SIECI\Projekt\NetSim\cmake-build-debug\CMakeFiles C:\Users\janch\OneDrive\Desktop\SIECI\Projekt\NetSim\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\data\Koptyrka-janu-\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\janch\OneDrive\Desktop\SIECI\Projekt\NetSim\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -116,89 +161,337 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Storage
+# Target rules for targets named NetSim
 
 # Build rule for target.
-Storage: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Storage
-.PHONY : Storage
+NetSim: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 NetSim
+.PHONY : NetSim
 
 # fast build rule for target.
-Storage/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Storage.dir\build.make CMakeFiles/Storage.dir/build
-.PHONY : Storage/fast
+NetSim/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/build
+.PHONY : NetSim/fast
 
-source/main.obj: source/main.cpp.obj
-.PHONY : source/main.obj
+#=============================================================================
+# Target rules for targets named NetSim_tests
+
+# Build rule for target.
+NetSim_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 NetSim_tests
+.PHONY : NetSim_tests
+
+# fast build rule for target.
+NetSim_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/build
+.PHONY : NetSim_tests/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f googletest-master\googlemock\CMakeFiles\gmock.dir\build.make googletest-master/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f googletest-master\googlemock\CMakeFiles\gmock_main.dir\build.make googletest-master/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f googletest-master\googletest\CMakeFiles\gtest.dir\build.make googletest-master/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f googletest-master\googletest\CMakeFiles\gtest_main.dir\build.make googletest-master/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+main.obj: main.cpp.obj
+.PHONY : main.obj
 
 # target to build an object file
-source/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Storage.dir\build.make CMakeFiles/Storage.dir/source/main.cpp.obj
-.PHONY : source/main.cpp.obj
+main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/main.cpp.obj
+.PHONY : main.cpp.obj
 
-source/main.i: source/main.cpp.i
-.PHONY : source/main.i
+main.i: main.cpp.i
+.PHONY : main.i
 
 # target to preprocess a source file
-source/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Storage.dir\build.make CMakeFiles/Storage.dir/source/main.cpp.i
-.PHONY : source/main.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-source/main.s: source/main.cpp.s
-.PHONY : source/main.s
+main.s: main.cpp.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-source/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Storage.dir\build.make CMakeFiles/Storage.dir/source/main.cpp.s
-.PHONY : source/main.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/main.cpp.s
+.PHONY : main.cpp.s
 
-source/package.obj: source/package.cpp.obj
-.PHONY : source/package.obj
+src/factory.obj: src/factory.cpp.obj
+.PHONY : src/factory.obj
 
 # target to build an object file
-source/package.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Storage.dir\build.make CMakeFiles/Storage.dir/source/package.cpp.obj
-.PHONY : source/package.cpp.obj
+src/factory.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/src/factory.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/src/factory.cpp.obj
+.PHONY : src/factory.cpp.obj
 
-source/package.i: source/package.cpp.i
-.PHONY : source/package.i
+src/factory.i: src/factory.cpp.i
+.PHONY : src/factory.i
 
 # target to preprocess a source file
-source/package.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Storage.dir\build.make CMakeFiles/Storage.dir/source/package.cpp.i
-.PHONY : source/package.cpp.i
+src/factory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/src/factory.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/src/factory.cpp.i
+.PHONY : src/factory.cpp.i
 
-source/package.s: source/package.cpp.s
-.PHONY : source/package.s
+src/factory.s: src/factory.cpp.s
+.PHONY : src/factory.s
 
 # target to generate assembly for a file
-source/package.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Storage.dir\build.make CMakeFiles/Storage.dir/source/package.cpp.s
-.PHONY : source/package.cpp.s
+src/factory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/src/factory.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/src/factory.cpp.s
+.PHONY : src/factory.cpp.s
 
-source/storage_types.obj: source/storage_types.cpp.obj
-.PHONY : source/storage_types.obj
+src/helpers.obj: src/helpers.cpp.obj
+.PHONY : src/helpers.obj
 
 # target to build an object file
-source/storage_types.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Storage.dir\build.make CMakeFiles/Storage.dir/source/storage_types.cpp.obj
-.PHONY : source/storage_types.cpp.obj
+src/helpers.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/src/helpers.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/src/helpers.cpp.obj
+.PHONY : src/helpers.cpp.obj
 
-source/storage_types.i: source/storage_types.cpp.i
-.PHONY : source/storage_types.i
+src/helpers.i: src/helpers.cpp.i
+.PHONY : src/helpers.i
 
 # target to preprocess a source file
-source/storage_types.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Storage.dir\build.make CMakeFiles/Storage.dir/source/storage_types.cpp.i
-.PHONY : source/storage_types.cpp.i
+src/helpers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/src/helpers.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/src/helpers.cpp.i
+.PHONY : src/helpers.cpp.i
 
-source/storage_types.s: source/storage_types.cpp.s
-.PHONY : source/storage_types.s
+src/helpers.s: src/helpers.cpp.s
+.PHONY : src/helpers.s
 
 # target to generate assembly for a file
-source/storage_types.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Storage.dir\build.make CMakeFiles/Storage.dir/source/storage_types.cpp.s
-.PHONY : source/storage_types.cpp.s
+src/helpers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/src/helpers.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/src/helpers.cpp.s
+.PHONY : src/helpers.cpp.s
+
+src/nodes.obj: src/nodes.cpp.obj
+.PHONY : src/nodes.obj
+
+# target to build an object file
+src/nodes.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/src/nodes.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/src/nodes.cpp.obj
+.PHONY : src/nodes.cpp.obj
+
+src/nodes.i: src/nodes.cpp.i
+.PHONY : src/nodes.i
+
+# target to preprocess a source file
+src/nodes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/src/nodes.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/src/nodes.cpp.i
+.PHONY : src/nodes.cpp.i
+
+src/nodes.s: src/nodes.cpp.s
+.PHONY : src/nodes.s
+
+# target to generate assembly for a file
+src/nodes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/src/nodes.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/src/nodes.cpp.s
+.PHONY : src/nodes.cpp.s
+
+src/package.obj: src/package.cpp.obj
+.PHONY : src/package.obj
+
+# target to build an object file
+src/package.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/src/package.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/src/package.cpp.obj
+.PHONY : src/package.cpp.obj
+
+src/package.i: src/package.cpp.i
+.PHONY : src/package.i
+
+# target to preprocess a source file
+src/package.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/src/package.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/src/package.cpp.i
+.PHONY : src/package.cpp.i
+
+src/package.s: src/package.cpp.s
+.PHONY : src/package.s
+
+# target to generate assembly for a file
+src/package.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/src/package.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/src/package.cpp.s
+.PHONY : src/package.cpp.s
+
+src/storage_types.obj: src/storage_types.cpp.obj
+.PHONY : src/storage_types.obj
+
+# target to build an object file
+src/storage_types.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/src/storage_types.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/src/storage_types.cpp.obj
+.PHONY : src/storage_types.cpp.obj
+
+src/storage_types.i: src/storage_types.cpp.i
+.PHONY : src/storage_types.i
+
+# target to preprocess a source file
+src/storage_types.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/src/storage_types.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/src/storage_types.cpp.i
+.PHONY : src/storage_types.cpp.i
+
+src/storage_types.s: src/storage_types.cpp.s
+.PHONY : src/storage_types.s
+
+# target to generate assembly for a file
+src/storage_types.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/src/storage_types.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/src/storage_types.cpp.s
+.PHONY : src/storage_types.cpp.s
+
+test/main_gtest.obj: test/main_gtest.cpp.obj
+.PHONY : test/main_gtest.obj
+
+# target to build an object file
+test/main_gtest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/test/main_gtest.cpp.obj
+.PHONY : test/main_gtest.cpp.obj
+
+test/main_gtest.i: test/main_gtest.cpp.i
+.PHONY : test/main_gtest.i
+
+# target to preprocess a source file
+test/main_gtest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/test/main_gtest.cpp.i
+.PHONY : test/main_gtest.cpp.i
+
+test/main_gtest.s: test/main_gtest.cpp.s
+.PHONY : test/main_gtest.s
+
+# target to generate assembly for a file
+test/main_gtest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/test/main_gtest.cpp.s
+.PHONY : test/main_gtest.cpp.s
+
+test/test_nodes.obj: test/test_nodes.cpp.obj
+.PHONY : test/test_nodes.obj
+
+# target to build an object file
+test/test_nodes.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/test/test_nodes.cpp.obj
+.PHONY : test/test_nodes.cpp.obj
+
+test/test_nodes.i: test/test_nodes.cpp.i
+.PHONY : test/test_nodes.i
+
+# target to preprocess a source file
+test/test_nodes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/test/test_nodes.cpp.i
+.PHONY : test/test_nodes.cpp.i
+
+test/test_nodes.s: test/test_nodes.cpp.s
+.PHONY : test/test_nodes.s
+
+# target to generate assembly for a file
+test/test_nodes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/test/test_nodes.cpp.s
+.PHONY : test/test_nodes.cpp.s
+
+test/test_package.obj: test/test_package.cpp.obj
+.PHONY : test/test_package.obj
+
+# target to build an object file
+test/test_package.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/test/test_package.cpp.obj
+.PHONY : test/test_package.cpp.obj
+
+test/test_package.i: test/test_package.cpp.i
+.PHONY : test/test_package.i
+
+# target to preprocess a source file
+test/test_package.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/test/test_package.cpp.i
+.PHONY : test/test_package.cpp.i
+
+test/test_package.s: test/test_package.cpp.s
+.PHONY : test/test_package.s
+
+# target to generate assembly for a file
+test/test_package.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/test/test_package.cpp.s
+.PHONY : test/test_package.cpp.s
+
+test/test_storage_types.obj: test/test_storage_types.cpp.obj
+.PHONY : test/test_storage_types.obj
+
+# target to build an object file
+test/test_storage_types.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/test/test_storage_types.cpp.obj
+.PHONY : test/test_storage_types.cpp.obj
+
+test/test_storage_types.i: test/test_storage_types.cpp.i
+.PHONY : test/test_storage_types.i
+
+# target to preprocess a source file
+test/test_storage_types.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/test/test_storage_types.cpp.i
+.PHONY : test/test_storage_types.cpp.i
+
+test/test_storage_types.s: test/test_storage_types.cpp.s
+.PHONY : test/test_storage_types.s
+
+# target to generate assembly for a file
+test/test_storage_types.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim_tests.dir\build.make CMakeFiles/NetSim_tests.dir/test/test_storage_types.cpp.s
+.PHONY : test/test_storage_types.cpp.s
 
 # Help Target
 help:
@@ -207,17 +500,47 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... install
+	@echo ... install/local
+	@echo ... install/strip
+	@echo ... list_install_components
 	@echo ... rebuild_cache
-	@echo ... Storage
-	@echo ... source/main.obj
-	@echo ... source/main.i
-	@echo ... source/main.s
-	@echo ... source/package.obj
-	@echo ... source/package.i
-	@echo ... source/package.s
-	@echo ... source/storage_types.obj
-	@echo ... source/storage_types.i
-	@echo ... source/storage_types.s
+	@echo ... NetSim
+	@echo ... NetSim_tests
+	@echo ... gmock
+	@echo ... gmock_main
+	@echo ... gtest
+	@echo ... gtest_main
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
+	@echo ... src/factory.obj
+	@echo ... src/factory.i
+	@echo ... src/factory.s
+	@echo ... src/helpers.obj
+	@echo ... src/helpers.i
+	@echo ... src/helpers.s
+	@echo ... src/nodes.obj
+	@echo ... src/nodes.i
+	@echo ... src/nodes.s
+	@echo ... src/package.obj
+	@echo ... src/package.i
+	@echo ... src/package.s
+	@echo ... src/storage_types.obj
+	@echo ... src/storage_types.i
+	@echo ... src/storage_types.s
+	@echo ... test/main_gtest.obj
+	@echo ... test/main_gtest.i
+	@echo ... test/main_gtest.s
+	@echo ... test/test_nodes.obj
+	@echo ... test/test_nodes.i
+	@echo ... test/test_nodes.s
+	@echo ... test/test_package.obj
+	@echo ... test/test_package.i
+	@echo ... test/test_package.s
+	@echo ... test/test_storage_types.obj
+	@echo ... test/test_storage_types.i
+	@echo ... test/test_storage_types.s
 .PHONY : help
 
 
